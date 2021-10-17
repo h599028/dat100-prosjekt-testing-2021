@@ -2,10 +2,10 @@ package no.hvl.dat100.prosjekt.modell.tester;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,7 +47,7 @@ class TestKortUtils {
 		
 		Kort[] samling = hand.getSamling();
 				
-		assertEquals(3, hand.getAntalKort());
+		assertEquals(3, hand.getAntallKort());
 		
 		assertEquals(kort1, samling[0]);
 		assertEquals(kort2, samling[1]);
@@ -59,14 +59,14 @@ class TestKortUtils {
 		KortSamling nysamling = new KortSamling();
 		
 		KortUtils.sorter(nysamling);
-		assertEquals(0, nysamling.getAntalKort());
+		assertEquals(0, nysamling.getAntallKort());
 		
 		// sorter med et kort
 		Kort kort = new Kort(Kortfarge.Spar,1);
 		
 		nysamling.leggTil(kort);
 		KortUtils.sorter(nysamling);
-		assertEquals(1, nysamling.getAntalKort());
+		assertEquals(1, nysamling.getAntallKort());
 		assertTrue(nysamling.har(kort));
 		
 	}
@@ -76,7 +76,7 @@ class TestKortUtils {
 
 		KortUtils.stokk(hand);
 		
-		assertEquals(3, hand.getAntalKort());
+		assertEquals(3, hand.getAntallKort());
 		
 		assertTrue(hand.har(kort1));
 		assertTrue(hand.har(kort2));
@@ -88,14 +88,14 @@ class TestKortUtils {
 		KortSamling samling = new KortSamling();
 		
 		KortUtils.stokk(samling);
-		assertEquals(0, samling.getAntalKort());
+		assertEquals(0, samling.getAntallKort());
 		
 		// stokk med et kort
 		Kort kort = new Kort(Kortfarge.Spar,1);
 		
 		samling.leggTil(kort);
 		KortUtils.stokk(samling);
-		assertEquals(1, samling.getAntalKort());
+		assertEquals(1, samling.getAntallKort());
 		assertTrue(samling.har(kort));
 		
 	}

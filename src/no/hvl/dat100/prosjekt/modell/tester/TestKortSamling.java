@@ -46,7 +46,7 @@ public class TestKortSamling {
 		
 		assertEquals(4 * Regler.MAKS_KORT_FARGE, samlingen.length);
 		
-		assertEquals(0, samling.getAntalKort());
+		assertEquals(0, samling.getAntallKort());
 
 	}
 	
@@ -54,7 +54,7 @@ public class TestKortSamling {
 	public void TestleggTilHar() {
 
 		setUp();
-		assertEquals(3, samling.getAntalKort());
+		assertEquals(3, samling.getAntallKort());
 		
 		assertTrue(samling.har(kort1));
 		assertTrue(samling.har(kort2));
@@ -88,7 +88,7 @@ public class TestKortSamling {
 		
 		samling.leggTilAlle();
 		
-		assertEquals(4 * Regler.MAKS_KORT_FARGE,samling.getAntalKort());
+		assertEquals(4 * Regler.MAKS_KORT_FARGE,samling.getAntallKort());
 		
 		for (Kortfarge f : Kortfarge.values()) {
 			for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
@@ -107,7 +107,7 @@ public class TestKortSamling {
 		assertFalse(samling.har(kort2));
 		assertFalse(samling.har(kort3));
 		
-		assertEquals(0,samling.getAntalKort());
+		assertEquals(0,samling.getAntallKort());
 		assertTrue(samling.erTom());
 	}
 	
@@ -122,7 +122,7 @@ public class TestKortSamling {
 		
 		assertEquals(kort2, samling.seSiste());
 		
-		assertEquals(3, samling.getAntalKort());
+		assertEquals(3, samling.getAntallKort());
 		
 	}
 
@@ -132,13 +132,13 @@ public class TestKortSamling {
 		setUp();
 		
 		assertEquals(kort2, samling.taSiste());
-		assertEquals(2, samling.getAntalKort());
+		assertEquals(2, samling.getAntallKort());
 		
 		assertEquals(kort3, samling.taSiste());
-		assertEquals(1, samling.getAntalKort());
+		assertEquals(1, samling.getAntallKort());
 		
 		assertEquals(kort1, samling.taSiste());
-		assertEquals(0, samling.getAntalKort());
+		assertEquals(0, samling.getAntallKort());
 		
 		assertNull(samling.taSiste());
 		
@@ -151,7 +151,7 @@ public class TestKortSamling {
 		
 		assertTrue(samling.fjern(kort2));
 		
-		assertEquals(2, samling.getAntalKort());
+		assertEquals(2, samling.getAntallKort());
 		assertTrue(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertTrue(samling.har(kort3));
@@ -161,7 +161,7 @@ public class TestKortSamling {
 		Kort kort = new Kort(Kortfarge.Spar,1);
 		assertFalse(samling.fjern(kort));
 		
-		assertEquals(2, samling.getAntalKort());
+		assertEquals(2, samling.getAntallKort());
 		assertTrue(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertTrue(samling.har(kort3));
@@ -169,7 +169,7 @@ public class TestKortSamling {
 		
 		// fjerne null kort
 		assertFalse(samling.fjern(null));
-		assertEquals(2, samling.getAntalKort());
+		assertEquals(2, samling.getAntallKort());
 		assertTrue(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertTrue(samling.har(kort3));
@@ -177,7 +177,7 @@ public class TestKortSamling {
 				
 		assertTrue(samling.fjern(kort1));
 		
-		assertEquals(1, samling.getAntalKort());
+		assertEquals(1, samling.getAntallKort());
 		assertFalse(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertTrue(samling.har(kort3));
@@ -186,7 +186,7 @@ public class TestKortSamling {
 		
 		assertTrue(samling.fjern(kort3));
 		
-		assertEquals(0, samling.getAntalKort());
+		assertEquals(0, samling.getAntallKort());
 		assertFalse(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertFalse(samling.har(kort3));
@@ -194,7 +194,7 @@ public class TestKortSamling {
 		
 		// fjern fra tom samling
 		assertFalse(samling.fjern(kort));
-		assertEquals(0, samling.getAntalKort());
+		assertEquals(0, samling.getAntallKort());
 		assertFalse(samling.har(kort1));
 		assertFalse(samling.har(kort2));
 		assertFalse(samling.har(kort3));
@@ -206,15 +206,14 @@ public class TestKortSamling {
 	public void TestgetAlleKort() {
 
 		KortSamling tomsamling = new KortSamling();
-		
-		Kort[] allekort = tomsamling.getAllekort();
+		Kort[] allekort = tomsamling.getAlleKort();
 		
 		assertNotNull(allekort);
 		assertEquals(0,allekort.length);
 		
 		setUp();
 		
-		allekort = samling.getAllekort();
+		allekort = samling.getAlleKort();
 		assertEquals(3,allekort.length);
 		
 		assertEquals(kort1,allekort[0]);
