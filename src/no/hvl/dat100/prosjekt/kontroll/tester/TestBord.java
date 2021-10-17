@@ -2,12 +2,12 @@ package no.hvl.dat100.prosjekt.kontroll.tester;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import no.hvl.dat100.prosjekt.kontroll.Bord;
-import no.hvl.dat100.prosjekt.kontroll.ISpiller;
 import no.hvl.dat100.prosjekt.kontroll.Spill;
 import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
 import no.hvl.dat100.prosjekt.modell.Kort;
