@@ -19,7 +19,7 @@ public class TestSpiller {
 		Spiller spiller = new TSpiller();
 		
 		assertEquals(0,spiller.getAntallKort());
-		assertEquals(0,spiller.getHand().getAntalKort());
+		assertEquals(0,spiller.getHand().getAntallKort());
 		assertEquals(0,spiller.getAntallTrekk());
 		assertEquals(Spillere.INGEN,spiller.hvem());
 	}

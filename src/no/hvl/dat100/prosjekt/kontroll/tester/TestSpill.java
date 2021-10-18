@@ -66,13 +66,13 @@ public class TestSpill {
 		KortSamling bunkefra = spill.getBord().getBunkeFra();
 		
 		int antallspiller = spiller.getAntallKort();
-		int antallbunke = bunkefra.getAntalKort();
+		int antallbunke = bunkefra.getAntallKort();
 		
 		spill.trekkFraBunke(spiller);
 		
 		assertEquals(antallspiller+1, spiller.getAntallKort());
 		assertEquals(1, spiller.getAntallTrekk());
-		assertEquals(antallbunke-1, bunkefra.getAntalKort());
+		assertEquals(antallbunke-1, bunkefra.getAntallKort());
 	}
 	
 	@Test
@@ -86,13 +86,13 @@ public class TestSpill {
 		Kort kort = new Kort(Kortfarge.Hjerter,1);
 		
 		KortSamling bunketil = spill.getBord().getBunkeTil();
-		int antallbunketil = bunketil.getAntalKort();
+		int antallbunketil = bunketil.getAntallKort();
 		
 		spiller.leggTilKort(kort);
 		int antallkortsspiller = spiller.getAntallKort();
 		spill.leggnedKort(spiller,kort);
 		
-		assertEquals(antallbunketil+1, bunketil.getAntalKort());
+		assertEquals(antallbunketil+1, bunketil.getAntallKort());
 		assertEquals(antallkortsspiller-1, spiller.getAntallKort());
 		assertEquals(kort, bunketil.seSiste());
 	}
@@ -122,7 +122,7 @@ public class TestSpill {
 		
 		ISpiller spiller = spill.getSyd();
 		
-		Kort[] allekort = spiller.getHand().getAllekort();
+		Kort[] allekort = spiller.getHand().getAlleKort();
 		Kort kort = allekort[0];
 		
 		// teste legg ned handling
